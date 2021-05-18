@@ -9,7 +9,7 @@ def sign(m):
     private_key, public_key = gen_keypair(secp256k1)
 
     #generate signature
-    r, s = ecdsa.sign(m, private_key)
+    r, s = ecdsa.sign(m, private_key, hashfunc=sha256, curve=secp256k1)
     #print("verify:", ecdsa.verify((r, s), m, public_key))
     return( public_key, [r, s] )
 
