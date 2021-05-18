@@ -10,7 +10,7 @@ def sign(m):
 
     #generate signature
     r, s = ecdsa.sign(m, private_key)
-    print("verify:", ecdsa.verify((r, s), m, public_key))
+    #print("verify:", ecdsa.verify((r, s), m, public_key))
     return( public_key, [r, s] )
 
 
